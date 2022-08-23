@@ -1,0 +1,29 @@
+https://cses.fi/problemset/task/1092/
+https://cses.fi/problemset/task/1641/           //See how we sorted the array, but still preserved the order
+https://cses.fi/problemset/task/1084
+https://cses.fi/problemset/task/1085/
+https://cses.fi/problemset/task/1630/
+https://cses.fi/problemset/task/1644/
+https://cses.fi/problemset/task/1111/
+https://cses.fi/problemset/task/1620/
+https://cses.fi/problemset/task/1193/
+https://cses.fi/problemset/task/1131/               //See notes
+https://cses.fi/problemset/task/1669 
+https://cses.fi/problemset/task/1145/
+https://cses.fi/problemset/task/1197/
+https://cses.fi/problemset/task/1652/          // https://codeforces.com/blog/entry/77128
+https://cses.fi/problemset/task/2431/
+https://cses.fi/problemset/task/2217            //See ques.txt
+https://cses.fi/problemset/task/2428
+https://cses.fi/problemset/task/2163
+https://cses.fi/problemset/task/1746/
+https://cses.fi/problemset/task/2413/       //Very Good,Notes,Code : https://www.youtube.com/watch?v=51AkVn5Urno, Intution : https://www.youtube.com/watch?v=pMEYMYTX-r0
+https://cses.fi/problemset/task/1194
+https://cses.fi/problemset/task/1202/           //THINK? (Me : Bcz it is already will be there when that optimal path was first discovered)
+https://cses.fi/problemset/task/1097/
+https://cses.fi/problemset/task/1694/ 
+https://cses.fi/problemset/task/1140/       //Do it with array. 
+https://cses.fi/problemset/task/1733/       //Tell Me The reason
+https://cses.fi/problemset/task/1750/
+https://cses.fi/problemset/task/1163
+https://cses.fi/problemset/task/1093/

@@ -1,0 +1,16 @@
+https://cses.fi/problemset/task/1070
+https://cses.fi/problemset/task/1620/
+https://cses.fi/problemset/task/2183
+https://cses.fi/problemset/task/1638             //C
+https://cses.fi/problemset/task/1673/              //See ptp
+https://cses.fi/problemset/task/1164/
+https://cses.fi/problemset/task/1648        //Tackle the problem of size of segTree array, as it gets 4n
+https://cses.fi/problemset/task/1072/       //https://math.stackexchange.com/questions/3266257/number-of-ways-two-knights-can-be-placed-such-that-they-dont-attack/3266324#3266324
+https://cses.fi/problemset/task/1754
+https://cses.fi/problemset/task/1619/       //You did very bad way, tell me the efficient way. TRY YOURS and then see this God's approach https://codeforces.com/blog/entry/83295
+https://cses.fi/problemset/task/1640
+https://cses.fi/problemset/task/1074/           //SEE THE MEDIAN APPROACH as well
+https://cses.fi/problemset/task/1662/
+https://cses.fi/problemset/task/1196/
+https://cses.fi/problemset/task/1732
+https://cses.fi/problemset/task/1625

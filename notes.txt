@@ -1,0 +1,91 @@
+SEGMENT TREES : Range queries mein jarrorat padi. Kyuki Dynamic updates bhi ho rahe to score array se kaam nahi na chala sakte hain. Kyuki har ek update mein O(n) time lelega , aur agar m esi queies aa gayi to O(mn) time lag jaana hai.  
+To aaya Segment trees jisme sum or updation dono O(logn) mein ho jaata hai. 
+To ismein hota kya hai ki hum array ko segments mein baat dete hain aur levels mein. Like ki top pe poori array  hogi, phir 2nd level pe uske 2 tukde kar diye, 1st part [0,n/2] ko represent karega aur 2nd waala [n/2+1, n] aur ese hi inko bhi further moleciular evel tak baat denge.
+Number of levels = O(logn).
+Number of nodes = 2n ----but we take 4n for margin of safety...
+
+
+
+ARRAY REPRESENTATION OF TREES : Ismein tree ko array mein represent karte hain; Agar 'p' parent index hai to 
+A)    0 based indexing
+left child : 2p+1
+Right Child : 2(p+1)
+PARENT : (c-1)/2
+
+B) 1 based indexing
+left child : 2p
+Right child : 2p+1
+PARENT : c/2    
+
+MAX-FLOW : Given a graph, where each edge can handle a maximum of some flow (like wts), and we have to find that what maximum flow we can enforce in the graph? Like ki ek source hai aur ek sink hai, source se sink mein paani daalna hai, par saari pipes ki kuch limit hai, hum kese maximum paani ka flow rate baana ke rakhh sakte hainn?So,
+FORD-FULKERSON METHOD O(F.E), where F is the max-flow and E is the edges, but it gets into many iterations and thus very bad time complexity.
+DINIC's ALgorithm O(V^2.E): Here we guide our path from source to sink, unlike fulkerson's method where it was just random. We do levels in graph, and don't alllow going back 
+
+
+
+
+TARZAN'S ALGORITHM : For Finding Strongly Connected Component(SCC) in a graph. (SCC - Subsets of nodes in directed graphs where each node in a subset can reach any other node in the subset, and vice versa). 
+There is also another algo called kosaraju's algorithm but, TARZAN's is more efficient, as it do dfs traversal only once as compared to two times in kosaraju's algorithm.
+For each node we would be storing two things (discovery time, low value). Low Value : Node with lowest discovery time accessible (disc time remain same, but low might change)
+TO Differentiate between a cross edge and a back edge use stack and do dfs. If during dfs we get to a element that has been visited and is present in the stack then it is a back edge, but if is reached but not currently in stack, then cross edge.
+Basicallly edge connecting two SCC will be treated as cross edge, and isn't taken into consideration.
+SO, if we treat each SCC as a single node, then the entire graph will become a DAG.
+
+
+
+
+
+
+TREES : 
+TREE DIAMETER (GENERIC TREE) : 2 ways - BFS and DP
+1- Approach 1 (BFS) :  Start a BFS with a random node(any node in the graph) and store the last node encountered(farthest) before search ends. This last node will definitely be one of the ends of the diameter (Why?). Now run a second BFS from this node and you will end on the other end of the diameter.
+
+2- DP Approach : Let's our tree be rooted at any arbitrary node . Then there are two possibilities : 
+a) Either diameter lies in one of the subtree of the tree(easy case, just call fn on child)
+b) diameter passes and includes the root node i
+    Now here let's say node i, has ci1,ci2,ci3-----cik childs. so what we calculate is height(downpath, length of maximum path that we can go for tree rooted at that node, for lea node = 1, as we can go nowhere) of every subtree of tree (rooted at i), and then take first 2 maximum h1,h2, and then diameter of tree would be d = h1+h2 (here we are calculating only edges count as dia parameter, change accordingly for others) 
+
+
+COLLECTING NUMBERS-II : https://www.youtube.com/watch?v=LEL3HW4dQew
+E.g [4, 2, 1, 5, 3], Now storing it as position array we get [3,2,5,1,4], we see that here are 2 inversions(1-2 (see pos array, pos[1] > pos[2]) & 3-4). so to collect these numbers we will have to make anathor round. like ki 2 pehle aa chuka hai 1 ke, so 1 ko lene ke liye hume peeche jaana hi padega.
+So total number of  rounds = 1(always 1 round required)+2(Inversions) = 3
+BUT HOW TO DEAL WITH THOSE UPDATES?
+OK So Cool, lets say we swap (a,b) - ELEMENTS NOT pos
+Now, see carefully when we are swapping these we will only affect inversions of pair {(a,a+1),(a,a-1),(b,b+1),(b,b-1)}, and put them in set as there may be duplicates.
+Now we will check that were there any inversions before caused by these 4(or less) pair, and if there were we remove them,and decrease inversion count. 
+Now we will swap the elements. After swapping we will again check if our new element positions caused any inversions and if so, add to inversion count. 
+And finally print InvCnt+1;
+
+//PLAYLIST(SEE):
+//It is possible that we already ahead of mp[element], because of previous repetion of some other element
+
+
+//COUNTING TOWERS - https://www.youtube.com/watch?v=pMEYMYTX-r0
+See, what we have for 1 se two ways (lxh)(2*1, or(1*1+1*1)). Now for h =2, we can either extend the below (2*1 --> 2*2), or (either/or both of 1*1->2*1), and so on for higher dimensions as well. 
+so,now we can see that to make (h+1) from height h, it pretty much depends upon the position of blocks in the previous lower level. 
+
+JOSEPHUS PROBLEM
+(https://www.youtube.com/watch?v=uCsD3ZGzMgE) : 
+Try some values of n, and you will start seeing a pattern. See;
+n           Winning Position (The last person to survive)
+1                   1           E
+2                   1           E
+3                   3
+4                   1           E
+5                   3
+6                   5
+7                   7
+8                   1           E
+9                   3
+10                  5
+11                  7
+12                  9
+13                  11
+
+Now, see whenever number is power of 2, winning seat resets to 1 (that's exactly because after every round, we will kill half of people, and eventually we will be left with again of 2 ki power people numbers, and again starting at 1, which is kind of same as initial stage).
+Inbetween of two's power winning seat increases by 2, until resetting again.
+So, to get winning seat directly we can do like this, 
+n = (2^a)+rem; where a is highest possible power of 2 less than n(for n = 77, a = 6 ==> n = 64+13),Then winning seat = (2*rem+1). 
+
+
+
